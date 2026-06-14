@@ -6,16 +6,8 @@
     <title>Times Square Live • Aggregate Collection + Riot Monitor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Fallback styles for preview services (htmlpreview.github.io etc.) that often block or delay the Tailwind CDN script.
-           These approximate the original design so the page is still usable and readable even if the dynamic Tailwind injection fails.
-           Local file open or full browsers will use the Tailwind script for perfect styling. */
-        body { 
-            background-color: #09090b; 
-            color: #e4e4e7; 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            margin: 0;
-            line-height: 1.5;
-        }
+        /* Fallback styles for preview services */
+        body { background-color: #09090b; color: #e4e4e7; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; line-height: 1.5; }
         .max-w-\[1600px\] { max-width: 1600px; margin-left: auto; margin-right: auto; }
         .p-6 { padding: 1.5rem; }
         .flex { display: flex; }
@@ -129,14 +121,14 @@
         </div>
         
         <div style="background:#1f2937; color:#fcd34d; padding:8px 12px; border-radius:6px; margin-bottom:12px; font-size:13px; text-align:center;">
-            <strong>Preview service note:</strong> If the page looks plain/unstyled or videos are missing, <strong>right-click → Save As</strong> (or Ctrl/Cmd+S) this page as <code>times_square_live.html</code> and open the saved file locally in your browser. It will look perfect. Some preview wrappers block scripts and embeds.
+            <strong>Preview service note:</strong> If the page looks plain/unstyled or videos are missing, <strong>right-click → Save As</strong> (or Ctrl/Cmd+S) this page as <code>times_square_live.html</code> and open the saved file locally in your browser. It will look perfect.
         </div>
         
         <!-- Header -->
         <div class="flex items-center justify-between mb-6">
             <div>
                 <h1 class="text-4xl font-bold tracking-tight">Times Square Live</h1>
-                <p class="text-zinc-400 mt-1">Aggregate collection of public live video sources • Updated 2026-06-14</p>
+                <p class="text-zinc-400 mt-1">Aggregate collection of public live video sources • Updated 2026-06-14 • All sources verified active via web/X searches</p>
             </div>
             <div class="flex items-center gap-3">
                 <div class="px-3 py-1 bg-red-600 text-white text-xs font-mono rounded-full flex items-center gap-2">
@@ -173,7 +165,7 @@
             <div class="cam-container aspect-video relative group">
                 <div class="absolute top-3 left-3 z-10 flex items-center gap-2">
                     <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">EARTHCAM</span>
-                    <span class="bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded">PRIMARY</span>
+                    <span class="bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded">PRIMARY - MULTI VIEW + CONTROLS</span>
                 </div>
                 <div class="absolute top-3 right-3 z-10">
                     <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
@@ -184,12 +176,12 @@
                 <div class="w-full h-full bg-zinc-900 flex items-center justify-center text-center p-8">
                     <div>
                         <div class="text-xl font-semibold mb-2">EarthCam Times Square</div>
-                        <p class="text-sm text-zinc-400 max-w-xs mx-auto mb-4">Multiple HD views (Crossroads, Street Level, Aerial). Best known public feed with audio on some angles. High quality, widely used.</p>
+                        <p class="text-sm text-zinc-400 max-w-xs mx-auto mb-4">Multiple HD/4K views (Crossroads, Street Cam with audio, South 4K). "Take Control" presets and interaction. Best overall.</p>
                         <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
                            class="inline-block px-5 py-2.5 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 text-sm">
                             Visit EarthCam Live →
                         </a>
-                        <div class="text-[10px] text-zinc-500 mt-3">Recommended first stop. Multiple camera presets + stills.</div>
+                        <div class="text-[10px] text-zinc-500 mt-3">Recommended first stop. YouTube mirror: youtube.com/watch?v=z-jYdOIKcTQ</div>
                     </div>
                 </div>
             </div>
@@ -253,7 +245,7 @@
                 </div>
                 <div class="text-center p-6">
                     <div class="text-lg font-semibold mb-2">SkylineWebcams • Times Square</div>
-                    <p class="text-sm text-zinc-400 mb-4">Direct HD street view overlooking the square.</p>
+                    <p class="text-sm text-zinc-400 mb-4">Direct HD street view overlooking the square. Additional nearby cams available on site.</p>
                     <a href="https://www.skylinewebcams.com/en/webcam/united-states/new-york/new-york/times-square.html" target="_blank"
                        class="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-medium">
                         Open Live Cam →
@@ -263,16 +255,43 @@
 
         </div>
 
+        <!-- Traffic / Official Cams Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+                Official Traffic / Crowd Monitoring Cams (NYC DOT)
+                <span class="text-xs font-normal px-2 py-0.5 bg-zinc-800 rounded">Useful for density/incidents</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+                <a href="https://511ny.org/" target="_blank" class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>511NY Live Traffic Map + Cams</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://webcams.nyctmc.org/" target="_blank" class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>NYC DOT Multiview Traffic Cams</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.weatherbug.com/traffic-cam/times-square-ny-10036" target="_blank" class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>WeatherBug TS Traffic Cams (7th/Broadway)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://trafficvision.live/blog/new-york-city-ny-traffic-cameras" target="_blank" class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>TrafficVision.Live Aggregator (includes TS area)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+            </div>
+            <p class="text-xs text-zinc-500 mt-2">These are utilitarian feeds (stills or basic video) focused on traffic/crowds around 42nd/7th/Broadway. Good supplement for monitoring unusual activity.</p>
+        </div>
+
         <!-- Additional Sources -->
         <div class="mb-8">
             <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
-                Additional Live Sources
+                Additional Live Sources & Aggregators
                 <span class="text-xs font-normal px-2 py-0.5 bg-zinc-800 rounded">Direct links</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
                 <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
                    class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
-                    <div>EarthCam Official (multi-cam + audio)</div>
+                    <div>EarthCam Official (multi-cam + audio + controls)</div>
                     <span class="text-zinc-400">→</span>
                 </a>
                 <a href="https://times-square.webcam/" target="_blank"
@@ -307,10 +326,23 @@
                 </a>
                 <a href="https://www.skylinewebcams.com/en/webcam/united-states/new-york/new-york/new-york-city.html" target="_blank"
                    class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
-                    <div>Skyline NYC Times Square alt</div>
+                    <div>Skyline NYC Times Square alt + nearby</div>
                     <span class="text-zinc-400">→</span>
                 </a>
             </div>
+        </div>
+
+        <!-- Controls & How to Use Section -->
+        <div class="mb-8 bg-zinc-900 rounded-xl p-5 border border-zinc-800">
+            <h3 class="font-semibold mb-3">Stream Controls & Tips (from page inspections)</h3>
+            <ul class="text-sm text-zinc-300 space-y-2 list-disc pl-5">
+                <li><strong>EarthCam</strong>: "Take Control" for HD presets, Picture-in-Picture, audio track selection on street cam. Multiple simultaneous views possible on main site.</li>
+                <li><strong>YouTube feeds</strong>: Standard player (quality selector, fullscreen, captions, speed). Mute recommended for multiple tabs.</li>
+                <li><strong>SkylineWebcams</strong>: Basic live player with some nearby cam links.</li>
+                <li><strong>Traffic Cams (DOT/511NY)</strong>: Map-based selection or multiview lists. Often still images refreshed frequently — excellent for spotting unusual crowd density or blockages.</li>
+                <li><strong>Pro tip</strong>: Open several in separate tabs or use the aggregator HTML. Cross-reference with X for eyewitness video during events.</li>
+            </ul>
+            <div class="mt-4 text-xs text-amber-400/70">All sources confirmed active via recent web metadata and X posts. Some angles (e.g. certain EarthCam street views) have occasional outages noted by users.</div>
         </div>
 
         <!-- Monitoring Tips + Riot Context -->
@@ -349,7 +381,7 @@
         </div>
 
         <div class="mt-8 text-center text-xs text-zinc-500">
-            Shareable live dashboard generated with Grok tools • All cameras are public third-party streams. Click any source link for more controls or additional angles. If preview looks broken, save the file locally or use the direct link above.
+            Shareable live dashboard generated with Grok tools • All cameras are public third-party streams. Click any source link for more controls or additional angles. Refresh feeds and re-check news/X for updates.
         </div>
     </div>
 
