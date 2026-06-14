@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times Square Live • Aggregate Collection + Riot Monitor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .cam-container { background: #111; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3); }
+        .live-badge { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+        iframe { border: none; width: 100%; height: 100%; }
+        .source-link { transition: all 0.1s; }
+        .source-link:hover { background-color: #1f2937; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <div class="max-w-[1600px] mx-auto p-6">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight">Times Square Live</h1>
+                <p class="text-zinc-400 mt-1">Aggregate collection of public live video sources • Updated 2026-06-14</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="px-3 py-1 bg-red-600 text-white text-xs font-mono rounded-full flex items-center gap-2">
+                    <div class="w-2 h-2 bg-white rounded-full live-badge"></div>
+                    <span>LIVE MONITORING</span>
+                </div>
+                <button onclick="location.reload()" 
+                        class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                    <span>⟳ Refresh All</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Banner -->
+        <div class="mb-6 p-4 bg-emerald-950 border border-emerald-900 rounded-xl">
+            <div class="flex items-start gap-4">
+                <div class="text-emerald-400 text-2xl">✓</div>
+                <div class="flex-1">
+                    <div class="font-semibold text-emerald-300">Current Situation: No riots detected</div>
+                    <p class="text-emerald-400/80 text-sm mt-1">
+                        As of latest public data (web + X searches June 14 2026): Large celebratory crowds of Brazilian World Cup fans in green/yellow filling Times Square. 
+                        Festive atmosphere with singing, dancing, music, flags. Heavy NYPD presence and some midtown traffic controls / crowd management (typical for big events + FIFA-related). 
+                        No credible reports of violence, property damage, looting, or riots. Past recent protests (Iran-related, May Day, No Kings) were peaceful gatherings in/near the area.
+                    </p>
+                    <div class="text-xs text-emerald-500 mt-2">Sources: EarthCam/Fox/YouTube live streams, recent news, X posts. Always verify visually on the cams below + cross-check @NYPD, local news.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primary Live Feeds Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+            
+            <!-- EarthCam Main -->
+            <div class="cam-container aspect-video relative group">
+                <div class="absolute top-3 left-3 z-10 flex items-center gap-2">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">EARTHCAM</span>
+                    <span class="bg-black/70 text-white text-[10px] px-1.5 py-0.5 rounded">PRIMARY</span>
+                </div>
+                <div class="absolute top-3 right-3 z-10">
+                    <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
+                       class="bg-black/70 hover:bg-black px-2 py-1 text-xs rounded flex items-center gap-1 source-link">
+                        OPEN FULL SITE →
+                    </a>
+                </div>
+                <div class="w-full h-full bg-zinc-900 flex items-center justify-center text-center p-8">
+                    <div>
+                        <div class="text-xl font-semibold mb-2">EarthCam Times Square</div>
+                        <p class="text-sm text-zinc-400 max-w-xs mx-auto mb-4">Multiple HD views (Crossroads, Street Level, Aerial). Best known public feed with audio on some angles. High quality, widely used.</p>
+                        <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
+                           class="inline-block px-5 py-2.5 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 text-sm">
+                            Visit EarthCam Live →
+                        </a>
+                        <div class="text-[10px] text-zinc-500 mt-3">Recommended first stop. Multiple camera presets + stills.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube EarthCam Crossroads -->
+            <div class="cam-container aspect-video relative">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">YOUTUBE LIVE</span>
+                </div>
+                <div class="absolute top-3 right-3 z-10">
+                    <a href="https://www.youtube.com/watch?v=z-jYdOIKcTQ" target="_blank"
+                       class="bg-black/70 hover:bg-black px-2 py-1 text-xs rounded flex items-center gap-1 source-link">WATCH ON YT</a>
+                </div>
+                <iframe src="https://www.youtube.com/embed/z-jYdOIKcTQ?autoplay=1&mute=1" 
+                        title="EarthCam Live: Times Square Crossroads" allowfullscreen></iframe>
+            </div>
+
+            <!-- FOX5 24/7 NYC -->
+            <div class="cam-container aspect-video relative">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">FOX 5 NY</span>
+                </div>
+                <div class="absolute top-3 right-3 z-10">
+                    <a href="https://www.youtube.com/watch?v=VGnFLdQW39A" target="_blank"
+                       class="bg-black/70 hover:bg-black px-2 py-1 text-xs rounded flex items-center gap-1 source-link">WATCH ON YT</a>
+                </div>
+                <iframe src="https://www.youtube.com/embed/VGnFLdQW39A?autoplay=1&mute=1" 
+                        title="24/7 NYC Live Cam | Times Square, skyline, streets, more" allowfullscreen></iframe>
+            </div>
+
+            <!-- Duffy Square 4K -->
+            <div class="cam-container aspect-video relative">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">4K VIEW</span>
+                </div>
+                <div class="absolute top-3 right-3 z-10">
+                    <a href="https://www.youtube.com/watch?v=iiBTWU2FyFo" target="_blank"
+                       class="bg-black/70 hover:bg-black px-2 py-1 text-xs rounded flex items-center gap-1 source-link">WATCH ON YT</a>
+                </div>
+                <iframe src="https://www.youtube.com/embed/iiBTWU2FyFo?autoplay=1&mute=1" 
+                        title="Times Square: Duffy Square 4K View Live" allowfullscreen></iframe>
+            </div>
+
+            <!-- Express View -->
+            <div class="cam-container aspect-video relative">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">EXPRESS VIEW</span>
+                </div>
+                <div class="absolute top-3 right-3 z-10">
+                    <a href="https://www.youtube.com/watch?v=a9J1OP_x5Rg" target="_blank"
+                       class="bg-black/70 hover:bg-black px-2 py-1 text-xs rounded flex items-center gap-1 source-link">WATCH ON YT</a>
+                </div>
+                <iframe src="https://www.youtube.com/embed/a9J1OP_x5Rg?autoplay=1&mute=1" 
+                        title="Times Square: Express View Live" allowfullscreen></iframe>
+            </div>
+
+            <!-- Skyline Webcams -->
+            <div class="cam-container aspect-video bg-zinc-900 flex items-center justify-center relative">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded">SKYLINE WEBCAMS</span>
+                </div>
+                <div class="text-center p-6">
+                    <div class="text-lg font-semibold mb-2">SkylineWebcams • Times Square</div>
+                    <p class="text-sm text-zinc-400 mb-4">Direct HD street view overlooking the square.</p>
+                    <a href="https://www.skylinewebcams.com/en/webcam/united-states/new-york/new-york/times-square.html" target="_blank"
+                       class="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-sm font-medium">
+                        Open Live Cam →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Additional Sources -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2">
+                Additional Live Sources
+                <span class="text-xs font-normal px-2 py-0.5 bg-zinc-800 rounded">Direct links</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+                <a href="https://www.earthcam.com/usa/newyork/timessquare/" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>EarthCam Official (multi-cam + audio)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://times-square.webcam/" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>Times-Square.webcam (3 HD views)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.webcamtaxi.com/en/usa/new-york/times-square-manhattan.html" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>WebcamTaxi (EarthCam powered)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://worldcams.tv/united-states/new-york/times-square" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>WorldCams (multiple specific angles)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=4qyZLflp-sI" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>1560 Broadway Billboard View (YouTube)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.youtube.com/playlist?list=PLLZyA2gHObBL7Dy34jLwuQUua90NtVP8E" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>NYC Live Cam Playlist (many angles)</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.youtube.com/user/earthcam/videos" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>EarthCam YouTube Channel</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+                <a href="https://www.skylinewebcams.com/en/webcam/united-states/new-york/new-york/new-york-city.html" target="_blank"
+                   class="source-link flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-zinc-800">
+                    <div>Skyline NYC Times Square alt</div>
+                    <span class="text-zinc-400">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Monitoring Tips + Riot Context -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+            <div class="lg:col-span-3 bg-zinc-900 rounded-xl p-5 border border-zinc-800">
+                <h3 class="font-semibold mb-3">How to monitor for incidents (riots / unrest)</h3>
+                <ul class="text-sm text-zinc-300 space-y-2 list-disc pl-5">
+                    <li>Watch live feeds for: sudden large police formations, people running, smoke, broken glass, barriers being erected, or unusual dispersal of crowds.</li>
+                    <li>Cross-reference multiple angles simultaneously (use this page + EarthCam site).</li>
+                    <li>Listen to audio where available (EarthCam street cam often has sound).</li>
+                    <li>Check recent X posts with geo / keyword filters for eyewitness video (search "Times Square" + riot terms or "Brazil" + incident).</li>
+                    <li>Official channels: @NYPD, @NYPDMidtown, local news (FOX5, ABC7NY, NY1) for statements.</li>
+                    <li>Note: Large festive crowds (e.g. soccer fans) create high density, loud noise, and require police for traffic/crowd control. This is normal and not a riot indicator.</li>
+                </ul>
+                <div class="mt-4 text-xs text-amber-400/70">Important: This page only embeds public streams and summarizes publicly available textual reports. It does not ingest or analyze video content automatically.</div>
+            </div>
+
+            <div class="lg:col-span-2 bg-zinc-900 rounded-xl p-5 border border-zinc-800">
+                <h3 class="font-semibold mb-3">Latest Context (as of searches)</h3>
+                <div class="text-sm space-y-3">
+                    <div>
+                        <span class="font-medium text-amber-300">Brazilian World Cup fans:</span> 
+                        Thousands in green/yellow took over / filled Times Square with chants, drums, flags, dancing ahead of Brazil vs Morocco (FIFA WC 2026). Highly energetic but described as celebratory/carnival atmosphere across ESPN, Instagram, Reuters, Reddit, news videos.
+                    </div>
+                    <div>
+                        <span class="font-medium text-amber-300">Security / NYPD:</span> 
+                        Heightened presence and some traffic controls / checkpoints in Midtown/Times Square area reported in eyewitness posts and DOT advisories (FIFA event-related). Similar to past event security (e.g. modeled on NYE or MSG games). One journalist post noted heavy checkpoints and "preparing as if a riot" — appears precautionary for massive crowd volume.
+                    </div>
+                    <div>
+                        <span class="font-medium text-emerald-300">No riot indicators:</span> 
+                        Keyword searches for violence/riots/unrest in recent window returned only fan celebration posts and older peaceful protest references (Iran strikes ~March, May Day). No mainstream reports of riots.
+                    </div>
+                </div>
+                <div class="text-[10px] mt-3 text-zinc-500">Data from web/X searches performed 2026-06-14. Situation can change rapidly — verify with live cams + fresh news.</div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center text-xs text-zinc-500">
+            Open this file locally in any browser. Embeds may require allowing autoplay / mixed content. For best quality use the direct links. 
+            Not affiliated with any camera provider. For entertainment / situational awareness only.
+        </div>
+    </div>
+
+    <script>
+        // Simple auto-reload hint
+        console.log('%c[Times Square Aggregate] Loaded. Refresh page or individual embeds as needed for live updates.', 'color:#666');
+        // Tailwind script already loaded via CDN
+    </script>
+</body>
+</html>
